@@ -1,0 +1,6 @@
+INFO Server Started
+INFO Database Connected
+WARNING Memory High
+ERROR Database Connection Failed
+INFO Retry
+ERROR Timeout
