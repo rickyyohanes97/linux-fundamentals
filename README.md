@@ -1,17 +1,30 @@
 # Linux Fundamentals for DevOps
 
-Welcome to my Linux learning repository.
+![Linux](https://img.shields.io/badge/Linux-Ubuntu%2024.04-E95420?logo=ubuntu&logoColor=white)
+![Bash](https://img.shields.io/badge/Bash-Scripting-4EAA25?logo=gnubash&logoColor=white)
+![Git](https://img.shields.io/badge/Git-Version%20Control-F05032?logo=git&logoColor=white)
+![Status](https://img.shields.io/badge/Progress-In%20Progress-blue)
 
-This repository documents my hands-on Linux practice as part of my roadmap to becoming a DevOps Engineer.
+## 📖 Overview
+
+This repository documents my hands-on Linux learning journey as part of my roadmap to becoming a **DevOps Engineer**.
+
+The goal of this repository is not only to learn Linux commands, but also to understand how Linux is used in real-world DevOps environments through practical exercises, Bash scripting, troubleshooting, and version control with Git.
+
+All labs are completed inside **Ubuntu 24.04 LTS on WSL2** and tracked using **Git & GitHub**.
+
+---
 
 # 🎯 Learning Goals
 
-- Understand Linux fundamentals
-- Learn Linux commands used by DevOps Engineers
-- Practice file management and permissions
-- Understand Linux users and groups
-- Learn troubleshooting using Linux commands
-- Document every learning progress with Git & GitHub
+- Build a strong Linux foundation for DevOps
+- Master essential Linux commands
+- Understand Linux file systems and permissions
+- Manage Linux users and groups
+- Practice troubleshooting using Linux CLI
+- Learn Bash Shell Scripting
+- Track learning progress using Git & GitHub
+- Prepare for Docker, Kubernetes, AWS, Terraform, and CI/CD
 
 ---
 
@@ -19,68 +32,67 @@ This repository documents my hands-on Linux practice as part of my roadmap to be
 
 ## 1. Linux Navigation
 
-Learned how to navigate inside Linux.
+### Commands
 
-Commands:
+```bash
+pwd
+ls
+ls -la
+cd
+tree
+```
 
-- `pwd`
-- `ls`
-- `ls -la`
-- `cd`
-- `tree`
+### Concepts Learned
 
-Concepts learned:
-
-- Current directory
-- Home directory (`~`)
-- Root directory (`/`)
-- Hidden files
-- Directory structure
+- Current Directory
+- Home Directory (`~`)
+- Root Directory (`/`)
+- Hidden Files
+- Linux Directory Structure
 
 ---
 
 ## 2. File Management
 
-Learned how to manage files and directories.
+### Commands
 
-Commands:
+```bash
+mkdir
+touch
+cp
+mv
+rm
+```
 
-- `mkdir`
-- `touch`
-- `cp`
-- `mv`
-- `rm`
+### Concepts Learned
 
-Concepts learned:
-
-- Create folders
+- Create directories
 - Create files
 - Copy files
 - Move files
 - Rename files
+- Delete files
 
 ---
 
 ## 3. Relative Path vs Absolute Path
 
-Practiced moving between directories efficiently.
-
-Examples:
+### Examples
 
 Relative Path
 
-```
+```bash
 cd ..
 cp nginx.conf ../backup
 ```
 
 Absolute Path
 
-```
+```bash
 cd /home/spikip/devops-lab/linux
 ```
 
-Concepts learned:
+### Concepts Learned
 
 - Relative Path
 - Absolute Path
@@ -91,46 +103,42 @@ Concepts learned:
 
 ## 4. Linux Permissions
 
-Learned Linux file permissions.
+### Commands
 
-Commands:
-
-```
+```bash
 chmod
 ls -l
 ```
 
-Concepts learned:
-
-- Owner
-- Group
-- Others
-- Read (r)
-- Write (w)
-- Execute (x)
-
-Permission examples:
+### Permission Table
 
 | Permission | Meaning |
 |------------|---------|
 | 700 | Owner has full access |
 | 644 | Owner can read/write, others can only read |
-| 755 | Owner full access, others read & execute |
-| 777 | Everyone has full access (Not Recommended) |
+| 755 | Owner full access, others can read & execute |
+| 777 | Everyone has full access (**Not Recommended**) |
 
-Important lesson:
+### Concepts Learned
 
-> Never use **777** on production servers because it allows everyone to modify files, creating serious security risks.
+- Owner
+- Group
+- Others
+- Read
+- Write
+- Execute
+
+### Best Practice
+
+Avoid using **777** on production servers because it creates serious security risks.
 
 ---
 
 ## 5. Linux Users & Groups
 
-Created users and groups manually.
+### Commands
 
-Commands:
-
-```
+```bash
 id
 groups
 whoami
@@ -140,13 +148,15 @@ usermod
 su -
 ```
 
-Concepts learned:
+### Concepts Learned
 
 - UID
 - GID
 - Primary Group
 - Secondary Group
 - User Switching
+
+### Practice
 
 Created groups:
 
@@ -163,32 +173,30 @@ Created users:
 
 ---
 
-## 6. Linux Directory Permissions
+## 6. Directory Permissions
 
-Practiced directory permissions using multiple users.
+Practiced Linux permissions using multiple users.
 
-Scenarios:
+### Scenarios
 
-- Accessing folders
-- Creating files
-- Deleting files
-- Group permissions
+- Access directories
+- Create files
+- Delete files
 - Shared directories
+- Group permissions
 
 Learned the difference between:
 
-- File permissions
-- Directory permissions
+- File Permissions
+- Directory Permissions
 
 ---
 
 ## 7. Finding Files
 
-Learned how to search files.
+### Commands
 
-Commands:
-
-```
+```bash
 find .
 find . -type f
 find . -type d
@@ -196,50 +204,46 @@ find . -name "*.conf"
 find . -name "*.log"
 ```
 
-Concepts learned:
+### Concepts Learned
 
 - Search by name
 - Search by type
-- Search recursively
+- Recursive search
 
 ---
 
 ## 8. Searching Text
 
-Learned how to search text inside files.
+### Commands
 
-Commands:
-
-```
+```bash
 grep
 grep -i
 grep -n
 ```
 
-Examples:
+### Examples
 
-```
+```bash
 grep "ERROR" app.log
 grep "INFO" app.log
 grep -i "error" app.log
 grep -n "ERROR" app.log
 ```
 
-Concepts learned:
+### Concepts Learned
 
 - Case-insensitive search
-- Line number search
-- Log troubleshooting
+- Display line numbers
+- Log file troubleshooting
 
 ---
 
 ## 9. Git Fundamentals
 
-Initialized my first Git repository.
+### Commands
 
-Commands:
-
-```
+```bash
 git init
 git status
 git add .
@@ -249,29 +253,84 @@ git remote add origin
 git push
 ```
 
-Concepts learned:
+### Concepts Learned
 
 - Repository
 - Commit
 - Branch
-- Remote
+- Remote Repository
 - Push to GitHub
+
+---
+
+## 10. Bash Scripting Fundamentals
+
+### Topics Learned
+
+- Shebang (`#!/bin/bash`)
+- Script Execution
+- File Permissions (`chmod +x`)
+- Variables
+- User Input (`read`)
+- Conditional Statements (`if`, `elif`, `else`)
+- String Comparison
+- Numeric Comparison
+- File Checking (`-f`)
+- Directory Checking (`-d`)
+- While Loop
+- For Loop
+- Password Validation
+- Countdown Script
+- Basic Automation Scripts
+
+### Bash Exercises
+
+Completed scripts:
+
+- hello.sh
+- variables.sh
+- profile.sh
+- userinfo.sh
+- checkuser.sh
+- grade.sh
+- checkpath.sh
+- password.sh
+- countdown.sh
+- servers.sh
+- backup.sh
+- days.sh
+- numbers.sh
+
+---
+
+# 💡 Skills Acquired
+
+- Linux Navigation
+- Linux File System
+- File Management
+- Linux Permissions
+- User & Group Management
+- File Searching
+- Log Troubleshooting
+- Git Basics
+- Bash Scripting
+- Basic Automation
 
 ---
 
 # 💻 Practice Environment
 
-Operating System
+## Operating System
 
 - Windows 10
 - WSL2
 - Ubuntu 24.04 LTS
 
-Editor
+## Editor
 
 - Visual Studio Code
 
-Version Control
+## Version Control
 
 - Git
 - GitHub
@@ -280,57 +339,106 @@ Version Control
 
 # 📂 Repository Structure
 
-```
+```text
 linux-fundamentals/
-│
-├── README.md
-├── notes.txt
-├── commands.md
-├── app.log
-├── lab/
-└── .gitignore
+
+README.md
+commands.md
+notes.txt
+.gitignore
+app.log
+
+lab/
+├── backup/
+├── config/
+├── logs/
+└── scripts/
+
+scripts/
 ```
+
+---
+
+# 🧪 Hands-on Labs
+
+This repository includes practical exercises covering:
+
+- Linux navigation
+- File management
+- Permissions
+- Users & Groups
+- Searching files
+- Log analysis
+- Git version control
+- Bash scripting
+- Basic automation
 
 ---
 
 # 🚀 Learning Roadmap
 
-- ✅ Linux Fundamentals
-- ⏳ Bash Shell Scripting
-- ⏳ Git Advanced
-- ⏳ Docker
-- ⏳ Docker Compose
-- ⏳ Kubernetes
-- ⏳ Terraform
-- ⏳ AWS Cloud Practitioner
-- ⏳ CI/CD
-- ⏳ Monitoring
-- ⏳ DevOps Projects
+| Status | Topic |
+|--------|-------|
+| ✅ | Linux Fundamentals |
+| 🔄 | Bash Shell Scripting |
+| ⏳ | Advanced Git |
+| ⏳ | Docker |
+| ⏳ | Docker Compose |
+| ⏳ | Kubernetes |
+| ⏳ | Terraform |
+| ⏳ | AWS Cloud Practitioner |
+| ⏳ | GitHub Actions |
+| ⏳ | CI/CD Pipelines |
+| ⏳ | Monitoring |
+| ⏳ | DevOps Projects |
 
 ---
 
-# 📌 Progress
+# 📈 Current Progress
 
-- ✅ Linux Navigation
+### Linux
+
+- ✅ Navigation
 - ✅ File Management
-- ✅ Relative & Absolute Path
 - ✅ Linux Permissions
 - ✅ Users & Groups
+- ✅ Relative & Absolute Paths
 - ✅ Find
 - ✅ Grep
 - ✅ Git Basics
-- ⏳ Shell Scripting
+
+### Bash
+
+- ✅ Variables
+- ✅ User Input
+- ✅ Conditional Statements
+- ✅ While Loop
+- ✅ For Loop
+- 🔄 Functions
+- ⏳ Command Line Arguments
+- ⏳ Exit Status
+- ⏳ Automation Project
 
 ---
 
-## 🎯 Current Goal
+# 🎯 Current Goal
 
-Master Linux before moving on to Docker, Kubernetes, Terraform, AWS, and CI/CD.
+Master Linux and Bash scripting before moving on to Docker, Kubernetes, Terraform, AWS, and CI/CD.
 
 ---
 
-## 🛠 Environment
+# 👨‍💻 Author
 
-- OS: Ubuntu 24.04 (WSL2)
-- Editor: Ricky Yohanes
-- Version Control: Git & GitHub
+**Ricky Yohanes**
+
+Aspiring DevOps Engineer
+
+Currently learning Linux, Bash, Git, AWS Cloud, and modern DevOps practices through hands-on labs and real-world projects.
+
+---
+
+## ⭐ Repository Purpose
+
+This repository serves as my personal Linux learning journal and DevOps portfolio.
+
+Every topic is learned through practical exercises instead of theory alone, with all progress tracked using Git and GitHub.
